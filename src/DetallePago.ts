@@ -3,7 +3,7 @@ import { PagoAnual } from './PagoAnual';
 import { TarjetaCredito } from './TarjetaCredito';
 import { Paypal } from './Paypal';
 
-class DetallePago{
+export class DetallePago{
 
     estado: EstadoPago;
     fechaPago:string;

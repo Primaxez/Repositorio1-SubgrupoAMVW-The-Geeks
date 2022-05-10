@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DetallePago = void 0;
 const PagoMensual_1 = require("./PagoMensual");
 const PagoAnual_1 = require("./PagoAnual");
 const TarjetaCredito_1 = require("./TarjetaCredito");
@@ -16,6 +17,7 @@ class DetallePago {
         return this.estado;
     }
 }
+exports.DetallePago = DetallePago;
 var EstadoPago;
 (function (EstadoPago) {
     EstadoPago["Vencido"] = "VENCIDO";
