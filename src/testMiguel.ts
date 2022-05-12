@@ -1,28 +1,20 @@
 import { Console } from "console";
 import { Cita, EstadoCita, TipoCita } from "./Cita";
 import { Doctor } from "./Doctor";
+import { Especialidad } from "./Especialidad";
 import { HistoriaMedica } from "./HistoriaMedica";
 import { Notificador } from "./Notificador";
 import { Paciente } from "./Paciente";
 import { Registro } from "./Registro";
+import { EstadoSuscripcion, Suscripcion } from "./Suscripcion";
+import { UbicacionGeografica } from "./UbicacionGeografica";
 import { Valor } from "./Valor";
 
-const now = new Date();
-const doc = new Doctor();
-const pac = new Paciente();
-const cita1 = new Cita(now, EstadoCita.PENDIENTE, doc, pac, TipoCita.TELECONSULTA, "Hapens", 5);
-console.log(cita1);
-const noti = new Notificador();
-cita1.add(noti);
 
-const val = new Valor();
-const reg = new Registro('Enfermedad Intestinal', cita1);
-reg.agregarValor(val);
-console.log(reg);
-
-cita1.setEstado(EstadoCita.CONFIRMADA);
-console.log(cita1);
-
-const hist = new HistoriaMedica(pac);
-hist.agregarRegistro(reg);
-console.log(hist);
+const ubic = new UbicacionGeografica('Venezuela', 'Miranda', 'Caracas', 150, 120);
+const espec = new Especialidad('Endocrinologo', []);
+const sub = new Suscripcion(EstadoSuscripcion.ACTIVA);
+const doc = new Doctor('drgonz', '12345', 'Gonzalez', espec);
+const pac = new Paciente('james', '12345', 'James', 24, 'Informatico', 100, '0212', 'james@gmai.com', ubic, sub);
+const date = new Date('2022-05-20');
+pac.solicitarCita(doc, date, TipoCita.TELECONSULTA);
