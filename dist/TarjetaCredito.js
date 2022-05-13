@@ -7,10 +7,10 @@ class TarjetaCredito {
         this.cvv = cvv;
         this.nombreTarjeta = nombreTarjeta;
     }
-    pagar() {
+    pagar(monto) {
         console.log("Se ha pagado correctamente con la Tarjeta de Credito");
     }
 }
 exports.TarjetaCredito = TarjetaCredito;
 let card1 = new TarjetaCredito(5899415735468965, 658, "Vicente Mirabal");
-card1.pagar();
+card1.pagar(16);

@@ -12,7 +12,11 @@ export abstract class Persona{
         this.nombre = nombre;
         this.ubicacion = ubicacion;
     }
-    modificarDatos() {
 
+
+    modificarDatos(nombre_usuario: string, contrasena: string, nombre: string) {
+        this.nombre_usuario = nombre_usuario;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
     }
 }

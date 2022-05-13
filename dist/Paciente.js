@@ -17,7 +17,10 @@ class Paciente extends Persona_1.Persona {
         if (this.suscripcion.estado === 'ACTIVA') {
             const cita = new Cita_1.Cita(fecha, Cita_1.EstadoCita.PENDIENTE, doctor, this, tipo, '', 0);
             console.log('CITA: Se ha agendado una cita en: ' + fecha + ' con el Dr. ' + doctor.nombre + ' bajo la modalidad: ' + tipo);
+            return cita;
         }
+        console.log('NO POSEE UNA SUSCRIPCIÓN ACTIVA');
+        return null;
     }
     cancelarCita(cita) {
         if (cita.estado == Cita_1.EstadoCita.CONFIRMADA || cita.estado == Cita_1.EstadoCita.PENDIENTE) {
@@ -26,7 +29,18 @@ class Paciente extends Persona_1.Persona {
     }
     buscarEspecialidad() {
     }
+    setHistoriaMedica(historia) {
+        this.historia = historia;
+    }
     leerHistoriaMedica() {
+        if (this.historia) {
+            for (let registro of this.historia.registros) {
+                console.log(registro);
+            }
+        }
+        else {
+            console.log('No posee una Historia Medica aun');
+        }
     }
 }
 exports.Paciente = Paciente;

@@ -35,13 +35,14 @@ class Cita {
         console.log('Cita: Se removió un Observer');
     }
     notifyall() {
-        console.log('Cita: Notificando a Observers');
         for (const observer of this.observers) {
+            console.log('Cita: Notificando a ' + observer + ' que cambió a Estado: ' + this.estado);
             observer.update(this);
         }
     }
     setEstado(estado) {
         this.estado = estado;
+        this.notifyall();
     }
 }
 exports.Cita = Cita;
@@ -50,6 +51,7 @@ var EstadoCita;
     EstadoCita["CONFIRMADA"] = "CONFIRMADA";
     EstadoCita["CANCELADA"] = "CANCELADA";
     EstadoCita["PENDIENTE"] = "PENDIENTE";
+    EstadoCita["FINALIZADA"] = "FINALIZADA";
 })(EstadoCita = exports.EstadoCita || (exports.EstadoCita = {}));
 var TipoCita;
 (function (TipoCita) {

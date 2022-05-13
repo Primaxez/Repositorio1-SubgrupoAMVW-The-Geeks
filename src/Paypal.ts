@@ -10,7 +10,7 @@ export class Paypal implements MetodoPago {
         this.apellido = apellido;
     }
 
-    pagar(): void {
+    pagar(monto: number): void {
         console.log("Se ha pagado correctamente con Paypal");
     }
     
@@ -18,4 +18,4 @@ export class Paypal implements MetodoPago {
 
 let cuenta1: Paypal =  new Paypal("vicente@Paypal.com", "Vicente", "Mirabal");
 
-cuenta1.pagar();
+cuenta1.pagar(30);

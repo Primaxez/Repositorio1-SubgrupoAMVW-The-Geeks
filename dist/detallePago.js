@@ -15,6 +15,9 @@ class DetallePago {
     aceptarDescuento(descuento) {
         descuento.AplicarDescuento(this);
     }
+    pagarSuscripcion(metodoPago) {
+        metodoPago.pagar(this.monto);
+    }
 }
 exports.DetallePago = DetallePago;
 var EstadoPago;

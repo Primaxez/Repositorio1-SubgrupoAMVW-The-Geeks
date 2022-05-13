@@ -1,3 +1,3 @@
 interface MetodoPago{
-    pagar(): void;
+    pagar(monto: number): void;
 }

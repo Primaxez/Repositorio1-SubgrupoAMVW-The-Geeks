@@ -29,6 +29,13 @@ export class DetallePago{
     aceptarDescuento(descuento: DescuentoVisitor){
             descuento.AplicarDescuento(this);
     }
+
+    pagarSuscripcion(metodoPago: MetodoPago){
+        metodoPago.pagar(this.monto);
+        
+    }
+
+
     
 }
 

@@ -7,10 +7,10 @@ class Paypal {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-    pagar() {
+    pagar(monto) {
         console.log("Se ha pagado correctamente con Paypal");
     }
 }
 exports.Paypal = Paypal;
 let cuenta1 = new Paypal("vicente@Paypal.com", "Vicente", "Mirabal");
-cuenta1.pagar();
+cuenta1.pagar(30);

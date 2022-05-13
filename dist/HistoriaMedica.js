@@ -2,9 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HistoriaMedica = void 0;
 class HistoriaMedica {
-    constructor(paciente) {
+    constructor() {
         this.registros = [];
-        this.paciente = paciente;
     }
     agregarRegistro(registro) {
         this.registros.push(registro);
