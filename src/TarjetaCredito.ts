@@ -10,7 +10,7 @@ export class TarjetaCredito implements MetodoPago {
         this.nombreTarjeta = nombreTarjeta;
     }
 
-    pagar(): void {
+    pagar(monto: number): void {
         console.log("Se ha pagado correctamente con la Tarjeta de Credito");
     }
     
@@ -18,4 +18,4 @@ export class TarjetaCredito implements MetodoPago {
 
 let card1: TarjetaCredito =  new TarjetaCredito(5899415735468965, 658, "Vicente Mirabal");
 
-card1.pagar();
+card1.pagar(16);
