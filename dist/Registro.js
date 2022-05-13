@@ -2,15 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Registro = void 0;
 class Registro {
-    constructor(antecedentes, cita) {
-        this.valores = [];
+    constructor(cita, mediciones = []) {
+        this.mediciones = [];
         this.observers = [];
-        this.antecedentes = antecedentes;
         this.cita = cita;
+        this.mediciones = this.mediciones;
     }
-    agregarValor(valor) {
-        this.valores.push(valor);
-        console.log('Registro: Se agregó un valor al registro');
+    agregarMedicion(medicion) {
+        this.mediciones.push(medicion);
+    }
+    obtenerMedicion() {
     }
     add(observer) {
         const isExist = this.observers.includes(observer);

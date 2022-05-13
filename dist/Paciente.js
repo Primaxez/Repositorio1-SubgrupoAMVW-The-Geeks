@@ -5,13 +5,12 @@ const Cita_1 = require("./Cita");
 const Persona_1 = require("./Persona");
 class Paciente extends Persona_1.Persona {
     constructor(nombre_usuario, contrasena, nombre, edad, profesion, peso, telefono, correo, ubicacion, suscripcion) {
-        super(nombre_usuario, contrasena, nombre);
+        super(nombre_usuario, contrasena, nombre, ubicacion);
         this.edad = edad;
         this.profesion = profesion;
         this.peso = peso;
         this.telefono = telefono;
         this.correo = correo;
-        this.ubicacion = ubicacion;
         this.suscripcion = suscripcion;
     }
     solicitarCita(doctor, fecha, tipo) {

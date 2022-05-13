@@ -6,7 +6,6 @@ class HistoriaMedica {
         this.registros = [];
         this.paciente = paciente;
     }
-    // CREO QUE NO CORRESPONDE A ESTA CLASE, PERO LO AGREGUÉ DE PRUEBA
     agregarRegistro(registro) {
         this.registros.push(registro);
     }

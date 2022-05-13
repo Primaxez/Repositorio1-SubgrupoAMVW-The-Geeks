@@ -11,8 +11,7 @@ export class Paciente extends Persona {
     peso : number;
     telefono : string;
     correo : string;
-    private ubicacion: UbicacionGeografica;
-    private suscripcion : Suscripcion;
+    suscripcion : Suscripcion;
     constructor (
         nombre_usuario: string, 
         contrasena: string, 
@@ -25,17 +24,16 @@ export class Paciente extends Persona {
         ubicacion: UbicacionGeografica,
         suscripcion: Suscripcion) 
         {
-            super(nombre_usuario,contrasena, nombre)  ;
+            super(nombre_usuario,contrasena, nombre, ubicacion)  ;
             this.edad = edad;
             this.profesion = profesion;
             this.peso = peso;
             this.telefono = telefono;
             this.correo = correo;
-            this.ubicacion = ubicacion;
             this.suscripcion = suscripcion;
         }
         
-        solicitarCita(doctor: Doctor, fecha: Date, tipo: TipoCita) {
+        solicitarCita(doctor: Doctor, fecha: string, tipo: TipoCita) {
             if (this.suscripcion.estado === 'ACTIVA') {
                 const cita = new Cita(fecha, EstadoCita.PENDIENTE, doctor, this, tipo, '', 0 );
                 console.log('CITA: Se ha agendado una cita en: ' + fecha + ' con el Dr. ' + doctor.nombre + ' bajo la modalidad: ' + tipo);

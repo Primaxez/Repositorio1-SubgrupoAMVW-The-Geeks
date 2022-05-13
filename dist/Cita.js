@@ -2,13 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TipoCita = exports.EstadoCita = exports.Cita = void 0;
 class Cita {
-    constructor(fecha, estado, doctor, paciente, tipo, comentario, valoracion) {
+    constructor(fecha, estado, doctor, paciente, tipo, comentario = "", valoracion = -1) {
+        this.comentario = "";
+        this.valoracion = -1;
         this.observers = [];
         this.fecha = fecha;
         this.estado = estado;
         this.doctor = doctor;
         this.paciente = paciente;
         this.tipo = tipo;
+        this.comentario = comentario;
+        this.valoracion = valoracion;
+    }
+    agregarObservacion(comentario, valoracion) {
         this.comentario = comentario;
         this.valoracion = valoracion;
     }

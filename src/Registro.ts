@@ -2,23 +2,24 @@ import { Cita } from "./Cita";
 import { Observable } from "./Observable";
 import { Observer } from "./Observer";
 import { Valor } from "./Valor";
+import { Medicion } from "./Medicion";
 
 export class Registro implements Observable {
-    antecedentes: string;
-    valores: Valor[] = [];
+    mediciones: Medicion[] = [];
     private cita : Cita;
     private observers: Observer[] = [];
 
-    constructor(antecedentes: string, cita: Cita){
-        this.antecedentes = antecedentes;
+    constructor(cita: Cita, mediciones: Medicion[] = []){
         this.cita = cita;
+        this.mediciones = this.mediciones;
     }
 
-    agregarValor(valor: Valor) {
-        this.valores.push(valor);
-        console.log('Registro: Se agregó un valor al registro')
-        
-        
+    agregarMedicion(medicion: Medicion) {
+        this.mediciones.push(medicion);     
+    }
+
+    obtenerMedicion() {
+
     }
 
 
