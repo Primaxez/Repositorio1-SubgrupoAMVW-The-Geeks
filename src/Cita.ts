@@ -11,8 +11,8 @@ export class Cita implements Observable {
     doctor: Doctor;
     paciente: Paciente;
     tipo: TipoCita;
-    comentario: string;
-    valoracion: number;
+    comentario?: string;
+    valoracion?: number;
     private observers: Observer[] = [];
     constructor(fecha: Date,
         estado: EstadoCita,
@@ -48,8 +48,8 @@ export class Cita implements Observable {
             console.log('Cita: Se removió un Observer');
         }
         notifyall(): void {
-            console.log('Cita: Notificando a Observers');
             for (const observer of this.observers){
+                console.log('Cita: Notificando a '+  observer+ ' que cambió a Estado: ' + this.estado);
                 observer.update(this);
             }
         }
@@ -57,6 +57,7 @@ export class Cita implements Observable {
         setEstado(estado: EstadoCita){
 
             this.estado = estado;
+            this.notifyall();
         }
         
 }
@@ -65,7 +66,8 @@ export enum  EstadoCita {
 
     CONFIRMADA = "CONFIRMADA",
     CANCELADA = "CANCELADA",
-    PENDIENTE = "PENDIENTE"
+    PENDIENTE = "PENDIENTE",
+    FINALIZADA = "FINALIZADA"
 }
 
 export enum TipoCita{

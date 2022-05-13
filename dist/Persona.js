@@ -7,7 +7,10 @@ class Persona {
         this.contrasena = contrasena;
         this.nombre = nombre;
     }
-    modificarDatos() {
+    modificarDatos(nombre_usuario, contrasena, nombre) {
+        this.nombre_usuario = nombre_usuario;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
     }
 }
 exports.Persona = Persona;

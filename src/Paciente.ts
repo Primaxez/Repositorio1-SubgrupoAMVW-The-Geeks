@@ -1,7 +1,9 @@
 import internal = require("stream");
 import { Cita, EstadoCita, TipoCita } from "./Cita";
 import { Doctor } from "./Doctor";
+import { HistoriaMedica } from "./HistoriaMedica";
 import { Persona } from "./Persona";
+import { Registro } from "./Registro";
 import { EstadoSuscripcion, Suscripcion } from "./Suscripcion";
 import { UbicacionGeografica } from "./UbicacionGeografica";
 
@@ -13,6 +15,7 @@ export class Paciente extends Persona {
     correo : string;
     private ubicacion: UbicacionGeografica;
     private suscripcion : Suscripcion;
+    historia? : HistoriaMedica ;
     constructor (
         nombre_usuario: string, 
         contrasena: string, 
@@ -23,7 +26,8 @@ export class Paciente extends Persona {
         telefono: string, 
         correo: string,
         ubicacion: UbicacionGeografica,
-        suscripcion: Suscripcion) 
+        suscripcion: Suscripcion,
+        ) 
         {
             super(nombre_usuario,contrasena, nombre)  ;
             this.edad = edad;
@@ -39,7 +43,10 @@ export class Paciente extends Persona {
             if (this.suscripcion.estado === 'ACTIVA') {
                 const cita = new Cita(fecha, EstadoCita.PENDIENTE, doctor, this, tipo, '', 0 );
                 console.log('CITA: Se ha agendado una cita en: ' + fecha + ' con el Dr. ' + doctor.nombre + ' bajo la modalidad: ' + tipo);
+                return cita;
             }
+            console.log('NO POSEE UNA SUSCRIPCIÓN ACTIVA')
+            return null;
         }
 
         cancelarCita(cita: Cita){
@@ -52,7 +59,19 @@ export class Paciente extends Persona {
             
         }
 
-        leerHistoriaMedica(){
+        setHistoriaMedica(historia: HistoriaMedica){
+            this.historia = historia;
+        }
 
+        leerHistoriaMedica(){
+            if (this.historia){
+                for (let registro of this.historia.registros){
+                    console.log(registro);
+                }
+            }
+            else{
+                console.log('No posee una Historia Medica aun')
+            }
+            
         }
 }

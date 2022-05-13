@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DetallePago = void 0;
+exports.EstadoPago = exports.DetallePago = void 0;
 const TarjetaCredito_1 = require("./TarjetaCredito");
 const Paypal_1 = require("./Paypal");
 const PagoMitad_1 = require("./PagoMitad");
@@ -29,7 +29,7 @@ var EstadoPago;
     EstadoPago["Vencido"] = "VENCIDO";
     EstadoPago["Rechazado"] = "RECHAZADO";
     EstadoPago["Aprobado"] = "APROBADO";
-})(EstadoPago || (EstadoPago = {}));
+})(EstadoPago = exports.EstadoPago || (exports.EstadoPago = {}));
 let metodopago1 = new TarjetaCredito_1.TarjetaCredito(5899415735468965, 658, "Vicente Mirabal");
 let metodopago2 = new Paypal_1.Paypal("vicente@Paypal.com", "Vicente", "Mirabal");
 let pago = new DetallePago(EstadoPago.Vencido, "16-11-2000", 15600, metodopago2, 30);

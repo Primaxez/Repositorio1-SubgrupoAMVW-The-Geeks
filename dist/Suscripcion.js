@@ -2,9 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EstadoSuscripcion = exports.Suscripcion = void 0;
 class Suscripcion {
-    constructor(estado, detallesPago) {
+    constructor(estado) {
+        this.detallesPago = [];
         this.estado = estado;
-        this.detallesPago = detallesPago;
+    }
+    addDetallePago(detalle_pago) {
+        this.detallesPago.push(detalle_pago);
     }
     modificarSuscripcion(estado) {
         this.estado = estado;

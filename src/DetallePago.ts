@@ -40,7 +40,7 @@ export class DetallePago{
 }
 
 
-enum EstadoPago{
+export enum EstadoPago{
     Vencido = "VENCIDO",
     Rechazado = "RECHAZADO",
     Aprobado = "APROBADO"
