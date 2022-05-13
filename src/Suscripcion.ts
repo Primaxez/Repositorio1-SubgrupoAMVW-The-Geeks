@@ -1,11 +1,11 @@
 import { DetallePago } from './DetallePago';
 export class Suscripcion {
     estado: EstadoSuscripcion;
-    detallePago: DetallePago;
+    detallesPago: DetallePago[];
 
-    constructor(estado: EstadoSuscripcion, detallePago: DetallePago){
+    constructor(estado: EstadoSuscripcion, detallesPago: DetallePago[]){
         this.estado = estado;
-        this.detallePago = detallePago;
+        this.detallesPago= detallesPago;
     }
 
     modificarSuscripcion(estado: EstadoSuscripcion){
