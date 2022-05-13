@@ -3,8 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TipoCita = exports.EstadoCita = exports.Cita = void 0;
 class Cita {
     constructor(fecha, estado, doctor, paciente, tipo, comentario = "", valoracion = -1) {
-        this.comentario = "";
-        this.valoracion = -1;
         this.observers = [];
         this.fecha = fecha;
         this.estado = estado;

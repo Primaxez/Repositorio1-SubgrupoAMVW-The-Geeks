@@ -61,7 +61,7 @@ citaRodrigo.agregarObservacion("Me gustó", 5);
 
 let registro1 = new Registro(citaRodrigo);
 
-let histRodrigo = new HistoriaMedica(pacRodrigo);
+pacRodrigo.setHistoriaMedica(new HistoriaMedica());
 
 let listaValores = docFelipe.especialidades[0].valores;
 
@@ -79,4 +79,4 @@ for (var med of registro1.mediciones) {
     }
 }
 
-histRodrigo.agregarRegistro(registro1);
+// pacRodrigo.historia.agregarRegistro(registro1);

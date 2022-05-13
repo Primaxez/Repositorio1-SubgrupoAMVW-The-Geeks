@@ -41,7 +41,7 @@ console.log("Ha hecho una cita el día " + citaRodrigo.fecha + " con el doctor "
 console.log("La cita esta " + citaRodrigo.estado);
 citaRodrigo.agregarObservacion("Me gustó", 5);
 let registro1 = new Registro_1.Registro(citaRodrigo);
-let histRodrigo = new HistoriaMedica_1.HistoriaMedica(pacRodrigo);
+pacRodrigo.setHistoriaMedica(new HistoriaMedica_1.HistoriaMedica());
 let listaValores = docFelipe.especialidades[0].valores;
 for (var valor of listaValores) {
     registro1.agregarMedicion(new Medicion_1.Medicion(valor, "123"));
@@ -54,4 +54,4 @@ for (var med of registro1.mediciones) {
         console.log("Valor maximo: " + med.valor.referencia_maximo);
     }
 }
-histRodrigo.agregarRegistro(registro1);
+// pacRodrigo.historia.agregarRegistro(registro1);
