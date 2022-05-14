@@ -18,8 +18,12 @@ export class Registro implements Observable {
         this.mediciones.push(medicion);     
     }
 
-    obtenerMedicion() {
-
+    obtenerMedicion(nombreValor: string) {
+        for (var medicion of this.mediciones) {
+            if (medicion.valor.nombre === nombreValor) {
+                return medicion;
+            }
+        }
     }
 
 

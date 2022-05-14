@@ -11,7 +11,12 @@ class Registro {
     agregarMedicion(medicion) {
         this.mediciones.push(medicion);
     }
-    obtenerMedicion() {
+    obtenerMedicion(nombreValor) {
+        for (var medicion of this.mediciones) {
+            if (medicion.valor.nombre === nombreValor) {
+                return medicion;
+            }
+        }
     }
     add(observer) {
         const isExist = this.observers.includes(observer);
