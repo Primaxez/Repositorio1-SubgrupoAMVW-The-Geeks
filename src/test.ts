@@ -84,6 +84,7 @@ for (var med of registro1.mediciones) {
     }
 }
 
+
 let notificacionPush: Notificador = new Notificador();
 registro1.addObserver(notificacionPush);
 
@@ -103,3 +104,4 @@ for (var med of registro1.mediciones) {
 
 
 // pacRodrigo.historia.agregarRegistro(registro1);
+
