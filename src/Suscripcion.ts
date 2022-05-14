@@ -1,4 +1,5 @@
 import { DetallePago } from './DetallePago';
+import { EstadoSuscripcion } from './EstadoSuscripcion';
 export class Suscripcion {
     estado: EstadoSuscripcion;
     pagos: DetallePago[] = [];
@@ -17,9 +18,3 @@ export class Suscripcion {
     }
 }
 
-export enum EstadoSuscripcion {
-
-    ACTIVA = 'ACTIVA',
-    SUSPENDIDA = 'SUSPENDIDA',
-    CANCELADA = 'CANCELADA'
-}

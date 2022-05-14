@@ -1,10 +1,12 @@
 import internal = require("stream");
-import { Cita, EstadoCita, TipoCita } from "./Cita";
+import { Cita } from "./Cita";
 import { Doctor } from "./Doctor";
+import { EstadoCita } from "./EstadoCita";
 import { HistoriaMedica } from "./HistoriaMedica";
 import { Persona } from "./Persona";
 import { Registro } from "./Registro";
-import { EstadoSuscripcion, Suscripcion } from "./Suscripcion";
+import { Suscripcion } from "./Suscripcion";
+import { TipoCita } from "./TipoCita";
 import { UbicacionGeografica } from "./UbicacionGeografica";
 
 export class Paciente extends Persona {

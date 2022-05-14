@@ -1,8 +1,10 @@
 import { throws } from "assert";
 import { Doctor } from "./Doctor";
+import { EstadoCita } from "./EstadoCita";
 import { Observable } from "./Observable";
 import { Observer } from "./Observer";
 import { Paciente } from "./Paciente";
+import { TipoCita } from "./TipoCita";
 
 export class Cita implements Observable {
 
@@ -67,16 +69,5 @@ export class Cita implements Observable {
         
 }
 
-export enum  EstadoCita {
 
-    CONFIRMADA = "CONFIRMADA",
-    CANCELADA = "CANCELADA",
-    PENDIENTE = "PENDIENTE",
-    FINALIZADA = "FINALIZADA"
-}
 
-export enum TipoCita{
-
-    TELECONSULTA = "TELECONSULTA",
-    PRESENCIAL = "PRESENCIAL"
-}

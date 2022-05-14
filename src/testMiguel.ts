@@ -1,6 +1,4 @@
 import { Console } from "console";
-import { Cita, EstadoCita, TipoCita } from "./Cita";
-import { DetallePago, EstadoPago } from "./DetallePago";
 import { Doctor } from "./Doctor";
 import { Especialidad } from "./Especialidad";
 import { HistoriaMedica } from "./HistoriaMedica";
@@ -8,7 +6,6 @@ import { Notificador } from "./Notificador";
 import { Paciente } from "./Paciente";
 import { Paypal } from "./Paypal";
 import { Registro } from "./Registro";
-import { EstadoSuscripcion, Suscripcion } from "./Suscripcion";
 import { UbicacionGeografica } from "./UbicacionGeografica";
 import { Valor } from "./Valor";
 

@@ -3,6 +3,7 @@ import { Paypal } from './Paypal';
 import { DescuentoVisitor } from './DescuentoVisitor';
 import { PagoMitad } from './PagoMitad';
 import { PagoTerceraParte } from './PagoTerceraParte';
+import { EstadoPago } from './EstadoPago';
 
 
 export class DetallePago{
@@ -40,11 +41,6 @@ export class DetallePago{
 }
 
 
-export enum EstadoPago{
-    Vencido = "VENCIDO",
-    Rechazado = "RECHAZADO",
-    Aprobado = "APROBADO"
-}
 
 
 
