@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Paciente = void 0;
 const Cita_1 = require("./Cita");
+const EstadoCita_1 = require("./EstadoCita");
 const Persona_1 = require("./Persona");
 class Paciente extends Persona_1.Persona {
     constructor(nombre_usuario, contrasena, nombre, edad, profesion, peso, telefono, correo, ubicacion, suscripcion) {
@@ -15,7 +16,7 @@ class Paciente extends Persona_1.Persona {
     }
     solicitarCita(doctor, fecha, tipo) {
         if (this.suscripcion.estado === 'ACTIVA') {
-            const cita = new Cita_1.Cita(fecha, Cita_1.EstadoCita.PENDIENTE, doctor, this, tipo, '', 0);
+            const cita = new Cita_1.Cita(fecha, EstadoCita_1.EstadoCita.PENDIENTE, doctor, this, tipo, '', 0);
             console.log('CITA: Se ha agendado una cita en: ' + fecha + ' con el Dr. ' + doctor.nombre + ' bajo la modalidad: ' + tipo);
             return cita;
         }
@@ -23,8 +24,8 @@ class Paciente extends Persona_1.Persona {
         return null;
     }
     cancelarCita(cita) {
-        if (cita.estado == Cita_1.EstadoCita.CONFIRMADA || cita.estado == Cita_1.EstadoCita.PENDIENTE) {
-            cita.estado = Cita_1.EstadoCita.CANCELADA;
+        if (cita.estado == EstadoCita_1.EstadoCita.CONFIRMADA || cita.estado == EstadoCita_1.EstadoCita.PENDIENTE) {
+            cita.estado = EstadoCita_1.EstadoCita.CANCELADA;
         }
     }
     buscarEspecialidad() {

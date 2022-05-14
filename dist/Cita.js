@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TipoCita = exports.EstadoCita = exports.Cita = void 0;
+exports.Cita = void 0;
 class Cita {
     constructor(fecha, estado, doctor, paciente, tipo, comentario = "", valoracion = -1) {
         this.observers = [];
@@ -44,15 +44,3 @@ class Cita {
     }
 }
 exports.Cita = Cita;
-var EstadoCita;
-(function (EstadoCita) {
-    EstadoCita["CONFIRMADA"] = "CONFIRMADA";
-    EstadoCita["CANCELADA"] = "CANCELADA";
-    EstadoCita["PENDIENTE"] = "PENDIENTE";
-    EstadoCita["FINALIZADA"] = "FINALIZADA";
-})(EstadoCita = exports.EstadoCita || (exports.EstadoCita = {}));
-var TipoCita;
-(function (TipoCita) {
-    TipoCita["TELECONSULTA"] = "TELECONSULTA";
-    TipoCita["PRESENCIAL"] = "PRESENCIAL";
-})(TipoCita = exports.TipoCita || (exports.TipoCita = {}));

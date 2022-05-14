@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EstadoPago = exports.DetallePago = void 0;
+exports.DetallePago = void 0;
 class DetallePago {
     constructor(estado, fechaPago, monto, metodo, cantDias) {
         this.estado = estado;
@@ -20,9 +20,3 @@ class DetallePago {
     }
 }
 exports.DetallePago = DetallePago;
-var EstadoPago;
-(function (EstadoPago) {
-    EstadoPago["Vencido"] = "VENCIDO";
-    EstadoPago["Rechazado"] = "RECHAZADO";
-    EstadoPago["Aprobado"] = "APROBADO";
-})(EstadoPago = exports.EstadoPago || (exports.EstadoPago = {}));

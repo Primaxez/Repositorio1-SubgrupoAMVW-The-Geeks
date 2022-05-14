@@ -1,6 +1,7 @@
 import { Especialidad } from "./Especialidad"
 import { Registro } from "./Registro"
-import { Cita, EstadoCita } from "./Cita"
+import { Cita } from "./Cita"
+import { EstadoCita } from "./EstadoCita"
 import { Persona } from "./Persona"
 import { UbicacionGeografica } from "./UbicacionGeografica"
 export class Doctor extends Persona{
