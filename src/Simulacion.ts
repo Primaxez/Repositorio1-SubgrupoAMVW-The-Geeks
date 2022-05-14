@@ -102,6 +102,4 @@ for (var med of registro1.mediciones) {
     }
 }
 
-
-// pacRodrigo.historia.agregarRegistro(registro1);
-
+pacRodrigo.historia?.agregarRegistro(registro1);
