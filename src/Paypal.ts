@@ -10,8 +10,9 @@ export class Paypal implements MetodoPago {
         this.apellido = apellido;
     }
 
-    pagar(monto: number): void {
+    pagar(monto: number): boolean {
         console.log("Se ha pagado correctamente con Paypal");
+        return true;
     }
     
 }

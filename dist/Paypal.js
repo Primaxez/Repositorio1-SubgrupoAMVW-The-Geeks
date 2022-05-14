@@ -9,6 +9,7 @@ class Paypal {
     }
     pagar(monto) {
         console.log("Se ha pagado correctamente con Paypal");
+        return true;
     }
 }
 exports.Paypal = Paypal;
