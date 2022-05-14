@@ -5,6 +5,10 @@ export class HistoriaMedica {
 
     registros: Registro[] = [];
 
+    constructor(registros: Registro[] = []){
+        this.registros = registros;
+    }
+
     agregarRegistro(registro: Registro){
         this.registros.push(registro);
     }
