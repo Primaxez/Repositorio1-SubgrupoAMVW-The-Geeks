@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const Cita_1 = require("./Cita");
 const EstadoCita_1 = require("./EstadoCita");
@@ -60,7 +59,6 @@ for (var med of registro1.mediciones) {
         console.log("Valor maximo: " + med.valor.referencia_maximo);
     }
 }
-
 let notificacionPush = new Notificador_1.Notificador();
 registro1.addObserver(notificacionPush);
 console.log(" ");
@@ -74,4 +72,3 @@ for (var med of registro1.mediciones) {
     }
 }
 // pacRodrigo.historia.agregarRegistro(registro1);
-

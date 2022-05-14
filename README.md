@@ -12,13 +12,13 @@ Repositorio 1 (TypeScript) del Subgrupo conformado por Alejandro Pestana, Miguel
 
 # Instalación y Setup
 
-Primero que nada, debes descargar e instalar [Node.JS](https://nodejs.org/es/). Después, es necesario instalar TypeScript de forma global:
+Primero que nada, se debe descargar e instalar [Node.JS](https://nodejs.org/es/). Después, es necesario instalar TypeScript de forma global:
 
 ```
 npm install -g typescript
 ```
 
-Luego, descarga o clona el repositorio en tu máquina.
+Luego, descarga o clona el repositorio en su máquina.
 
 Finalmente, en /Repositorio1-SubgrupoAMVW-The-Geeks ejecuta:
 

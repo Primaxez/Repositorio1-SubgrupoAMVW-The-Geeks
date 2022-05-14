@@ -32,15 +32,15 @@ class Cita {
         this.observers.splice(observerIndex, 1);
         console.log('Cita: Se removió un Observer');
     }
-    notifyall() {
+    notifyall(descripcion) {
         for (const observer of this.observers) {
             console.log('Cita: Notificando a ' + observer + ' que cambió a Estado: ' + this.estado);
-            observer.update(this);
+            observer.update(this, descripcion);
         }
     }
     setEstado(estado) {
         this.estado = estado;
-        this.notifyall();
+        this.notifyall("Se ha modificado el estado de cita");
     }
 }
 exports.Cita = Cita;
