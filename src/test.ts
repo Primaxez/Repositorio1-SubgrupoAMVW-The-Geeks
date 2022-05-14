@@ -21,6 +21,7 @@ import { PagoTerceraParte } from './PagoTerceraParte';
 import { Registro } from "./Registro";
 import { Medicion } from "./Medicion";
 import { HistoriaMedica } from "./HistoriaMedica";
+import { Notificador } from './Notificador';
 
 let valAntecedentes = new Valor("Antecedentes personales", "Datos");
 let valPresion = new Valor("Presión arterial", "mmHg");
@@ -82,5 +83,23 @@ for (var med of registro1.mediciones) {
         console.log("Valor maximo: " + med.valor.referencia_maximo);
     }
 }
+
+let notificacionPush: Notificador = new Notificador();
+registro1.addObserver(notificacionPush);
+
+console.log(" ");
+
+docFelipe.moficarRegistro(registro1, "Colesterol", 150);
+
+console.log(" ");
+
+for (var med of registro1.mediciones) {
+    console.log(med.valor.nombre + ": " + med.evaluacion + " " + med.valor.unidad_medida);
+    if (med.valor instanceof ValorReferenciado) {
+        console.log("Valor minimo: " + med.valor.referencia_minimo);
+        console.log("Valor maximo: " + med.valor.referencia_maximo);
+    }
+}
+
 
 // pacRodrigo.historia.agregarRegistro(registro1);

@@ -38,8 +38,8 @@ export class Cita implements Observable {
         this.valoracion = valoracion;
     }
 
-    add(observer: Observer): void {
-        const isExist = this.observers.includes(observer);
+    addObserver(observer: Observer): void {
+        const isExist = this.observers.push(observer);
         if (isExist){
             return console.log('Cita: Ya posee un Observer asignado');
         }

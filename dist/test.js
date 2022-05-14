@@ -17,6 +17,7 @@ const TarjetaCredito_1 = require("./TarjetaCredito");
 const Registro_1 = require("./Registro");
 const Medicion_1 = require("./Medicion");
 const HistoriaMedica_1 = require("./HistoriaMedica");
+const Notificador_1 = require("./Notificador");
 let valAntecedentes = new Valor_1.Valor("Antecedentes personales", "Datos");
 let valPresion = new Valor_1.Valor("Presión arterial", "mmHg");
 let valFrecuencia = new Valor_1.Valor("Frecuencia cardiaca", "cpm");
@@ -51,6 +52,18 @@ for (var valor of listaValores) {
     registro1.agregarMedicion(new Medicion_1.Medicion(valor, "123"));
 }
 console.log("El doctor realizó el registro midiendo lo siguiente:");
+for (var med of registro1.mediciones) {
+    console.log(med.valor.nombre + ": " + med.evaluacion + " " + med.valor.unidad_medida);
+    if (med.valor instanceof ValorReferenciado_1.ValorReferenciado) {
+        console.log("Valor minimo: " + med.valor.referencia_minimo);
+        console.log("Valor maximo: " + med.valor.referencia_maximo);
+    }
+}
+let notificacionPush = new Notificador_1.Notificador();
+registro1.addObserver(notificacionPush);
+console.log(" ");
+docFelipe.moficarRegistro(registro1, "Colesterol", 150);
+console.log(" ");
 for (var med of registro1.mediciones) {
     console.log(med.valor.nombre + ": " + med.evaluacion + " " + med.valor.unidad_medida);
     if (med.valor instanceof ValorReferenciado_1.ValorReferenciado) {

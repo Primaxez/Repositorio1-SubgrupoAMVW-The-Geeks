@@ -16,8 +16,8 @@ class Cita {
         this.comentario = comentario;
         this.valoracion = valoracion;
     }
-    add(observer) {
-        const isExist = this.observers.includes(observer);
+    addObserver(observer) {
+        const isExist = this.observers.push(observer);
         if (isExist) {
             return console.log('Cita: Ya posee un Observer asignado');
         }

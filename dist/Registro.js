@@ -18,8 +18,16 @@ class Registro {
             }
         }
     }
-    add(observer) {
-        const isExist = this.observers.includes(observer);
+    EditarMedicion(nombreValor, evaluacion, doctor) {
+        for (var medicion of this.mediciones) {
+            if (medicion.valor.nombre === nombreValor) {
+                medicion.evaluacion = evaluacion;
+                this.notifyall("EL doctor " + doctor.nombre + " editó " + nombreValor);
+            }
+        }
+    }
+    addObserver(observer) {
+        const isExist = this.observers.push(observer);
         if (isExist) {
             return console.log('Registro: Ya posee un Observer asignado');
         }
@@ -34,10 +42,10 @@ class Registro {
         this.observers.splice(observerIndex, 1);
         console.log('Registro: Se removió un Observer');
     }
-    notifyall() {
-        console.log('Registro: Notificando a Observers');
+    notifyall(descripcion) {
+        //console.log('Registro: Notificando a Observers');
         for (const observer of this.observers) {
-            observer.update(this);
+            observer.update(this, descripcion);
         }
     }
 }

@@ -3,6 +3,7 @@ import { Observable } from "./Observable";
 import { Observer } from "./Observer";
 import { Valor } from "./Valor";
 import { Medicion } from "./Medicion";
+import { Doctor } from './Doctor';
 
 export class Registro implements Observable {
     mediciones: Medicion[] = [];
@@ -26,9 +27,18 @@ export class Registro implements Observable {
         }
     }
 
+    EditarMedicion(nombreValor: string, evaluacion: string | number, doctor: Doctor) {
+        for (var medicion of this.mediciones) {
+            if (medicion.valor.nombre === nombreValor) {
+                medicion.evaluacion = evaluacion;
+                this.notifyall("EL doctor " + doctor.nombre + " editó " + nombreValor);
+            }
+        }
+    }
 
-    add(observer: Observer): void {
-        const isExist = this.observers.includes(observer);
+
+    addObserver(observer: Observer): void {
+        const isExist = this.observers.push(observer);
         if (isExist){
             return console.log('Registro: Ya posee un Observer asignado');
         }
@@ -43,13 +53,15 @@ export class Registro implements Observable {
         this.observers.splice(observerIndex, 1);
         console.log('Registro: Se removió un Observer');
     }
-    notifyall(): void {
-        console.log('Registro: Notificando a Observers');
+    notifyall(descripcion: string): void {
+        //console.log('Registro: Notificando a Observers');
 
         for (const observer of this.observers){
-            observer.update(this);
+            observer.update(this, descripcion);
         }
     }
+
+
     
 
 

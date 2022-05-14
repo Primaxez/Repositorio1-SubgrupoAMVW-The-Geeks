@@ -1,9 +1,9 @@
 import { Observer } from "./Observer";
 
 export interface Observable{
-    add(observer: Observer): void;
+    addObserver(observer: Observer): void;
 
     remove(observer: Observer): void;
 
-    notifyall(): void;
+    notifyall(descripcion: string): void;
 }

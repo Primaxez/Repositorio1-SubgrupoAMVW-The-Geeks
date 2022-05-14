@@ -20,8 +20,9 @@ export class Doctor extends Persona{
         return registro;
     }
 
-    moficarRegistro(registro:Registro) {
-        
+    moficarRegistro(registro:Registro, nombreValor: string, evaluacion: string | number ) {
+        registro.EditarMedicion(nombreValor, evaluacion, this);
+          
     }
 
     aceptarCita(cita: Cita) {
