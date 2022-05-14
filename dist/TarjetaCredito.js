@@ -9,6 +9,7 @@ class TarjetaCredito {
     }
     pagar(monto) {
         console.log("Se ha pagado correctamente con la Tarjeta de Credito");
+        return true;
     }
 }
 exports.TarjetaCredito = TarjetaCredito;
