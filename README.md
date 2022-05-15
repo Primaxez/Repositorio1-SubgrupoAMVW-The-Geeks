@@ -18,7 +18,7 @@ Primero que nada, se debe descargar e instalar [Node.JS](https://nodejs.org/es/)
 npm install -g typescript
 ```
 
-Luego, descarga o clona el repositorio en su máquina.
+Luego, descarga o clona el repositorio en tu máquina.
 
 Finalmente, en /Repositorio1-SubgrupoAMVW-The-Geeks ejecuta:
 
