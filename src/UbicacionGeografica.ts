@@ -25,6 +25,7 @@ export class UbicacionGeografica {
     }
 
     actualizarUbicacion(ciudad: string, estado: string){
-
+        this.ciudad = ciudad;
+        this.estado = estado;
     }
 }

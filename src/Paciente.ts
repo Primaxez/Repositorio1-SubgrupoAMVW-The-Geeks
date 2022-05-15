@@ -1,6 +1,8 @@
 import internal = require("stream");
 import { Cita } from "./Cita";
+import { Directorio } from "./Directorio";
 import { Doctor } from "./Doctor";
+import { Especialidad } from "./Especialidad";
 import { EstadoCita } from "./EstadoCita";
 import { HistoriaMedica } from "./HistoriaMedica";
 import { Persona } from "./Persona";
@@ -56,8 +58,25 @@ export class Paciente extends Persona {
             }
         }
 
-        buscarEspecialidad() {
-            
+        buscarEspecialidad(especialidad: Especialidad, directorio: Directorio) {
+            let lista: Doctor[]=[];
+            for (var doc of directorio.doctores){
+                for (var esp of doc.especialidades){
+                    if (esp = especialidad){
+                        lista.push(doc);
+                    }
+                }
+            }
+            return lista
+        }
+        buscarUbicacion(ubicacion: UbicacionGeografica, directorio: Directorio) {
+            let lista: Doctor[]=[];
+            for (var doc of directorio.doctores){
+                if(doc.obtenerUbicacion().pais == ubicacion.pais && doc.obtenerUbicacion().estado == ubicacion.estado){
+                    lista.push(doc);
+                }
+            }
+            return lista;
         }
 
         setHistoriaMedica(historia: HistoriaMedica){

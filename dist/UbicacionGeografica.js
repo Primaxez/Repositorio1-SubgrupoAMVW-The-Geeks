@@ -12,6 +12,8 @@ class UbicacionGeografica {
     actualizarGeolocalizacion() {
     }
     actualizarUbicacion(ciudad, estado) {
+        this.ciudad = ciudad;
+        this.estado = estado;
     }
 }
 exports.UbicacionGeografica = UbicacionGeografica;
