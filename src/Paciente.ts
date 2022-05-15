@@ -58,7 +58,7 @@ export class Paciente extends Persona {
             }
         }
 
-        buscarEspecialidad(especialidad: Especialidad, directorio: Directorio) {
+       /* buscarEspecialidad(especialidad: Especialidad, directorio: Directorio) {
             let lista: Doctor[]=[];
             for (var doc of directorio.doctores){
                 for (var esp of doc.especialidades){
@@ -77,7 +77,7 @@ export class Paciente extends Persona {
                 }
             }
             return lista;
-        }
+        }*/
 
         setHistoriaMedica(historia: HistoriaMedica){
             this.historia = historia;
