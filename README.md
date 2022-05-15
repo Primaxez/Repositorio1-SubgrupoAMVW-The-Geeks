@@ -1,4 +1,4 @@
-# Repositorio1-SubgrupoAMVW-The-Geeks
+# Repositorio1-SubgrupoAMVW-The-Geeks ![npm](https://img.shields.io/badge/node-v16.15.0-green) ![npm](https://img.shields.io/badge/typescript-v4.6.4-yellow)
 Repositorio 1 (TypeScript) del Subgrupo conformado por Alejandro Pestana, Miguel Cuadrado y Vicente Mirabal del equipo The Geeks
 
 # Tabla de Contribuciones:
@@ -28,8 +28,14 @@ npm install
 
 # Ejecución del Código
 
-Para poder ejecutar cualquier archivo de código ejecuta:
+Para poder correr cualquier archivo de código ejecuta:
 
 ```
 node ./dist/[INSERTAR AQUÍ NOMBRE DEL ARCHIVO].js
+```
+
+Por ejemplo, para correr la simulación ejecuta:
+
+```
+node ./dist/Simulacion.js
 ```
