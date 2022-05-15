@@ -17,7 +17,7 @@ class Doctor extends Persona_1.Persona {
         registro.editarMedicion(nombreValor, evaluacion, this);
     }
     aceptarCita(cita) {
-        cita.estado = EstadoCita_1.EstadoCita.CONFIRMADA;
+        cita.setEstado(EstadoCita_1.EstadoCita.CONFIRMADA);
     }
 }
 exports.Doctor = Doctor;

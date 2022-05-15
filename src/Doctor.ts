@@ -26,6 +26,6 @@ export class Doctor extends Persona{
     }
 
     aceptarCita(cita: Cita) {
-        cita.estado = EstadoCita.CONFIRMADA;
+        cita.setEstado(EstadoCita.CONFIRMADA);
     }
 }
