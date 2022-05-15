@@ -6,7 +6,7 @@ import { Persona } from "./Persona"
 import { UbicacionGeografica } from "./UbicacionGeografica"
 export class Doctor extends Persona{
 
-    especialidades: Especialidad[]
+    especialidades: Especialidad[];
 
    
 

@@ -13,5 +13,8 @@ class Persona {
         this.contrasena = contrasena;
         this.nombre = nombre;
     }
+    obtenerUbicacion() {
+        return this.ubicacion;
+    }
 }
 exports.Persona = Persona;
