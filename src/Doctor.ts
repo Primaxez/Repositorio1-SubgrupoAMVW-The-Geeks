@@ -21,7 +21,7 @@ export class Doctor extends Persona{
     }
 
     moficarRegistro(registro:Registro, nombreValor: string, evaluacion: string | number ) {
-        registro.EditarMedicion(nombreValor, evaluacion, this);
+        registro.editarMedicion(nombreValor, evaluacion, this);
           
     }
 

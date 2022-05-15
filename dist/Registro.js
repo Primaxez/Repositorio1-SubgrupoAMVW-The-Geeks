@@ -17,13 +17,14 @@ class Registro {
                 return medicion;
             }
         }
+        return null;
     }
-    EditarMedicion(nombreValor, evaluacion, doctor) {
-        for (var medicion of this.mediciones) {
-            if (medicion.valor.nombre === nombreValor) {
-                medicion.evaluacion = evaluacion;
-                this.notifyall("EL doctor " + doctor.nombre + " editó " + nombreValor);
-            }
+    editarMedicion(nombreValor, evaluacion, doctor) {
+        var med = this.obtenerMedicion(nombreValor);
+        if (med) {
+            med.evaluacion = evaluacion;
+            let hoy = new Date().toLocaleDateString();
+            this.notifyall("El doctor " + doctor.nombre + " editó " + nombreValor + " el día " + hoy);
         }
     }
     addObserver(observer) {

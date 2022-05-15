@@ -25,17 +25,17 @@ export class Registro implements Observable {
                 return medicion;
             }
         }
+        return null;
     }
 
-    EditarMedicion(nombreValor: string, evaluacion: string | number, doctor: Doctor) {
-        for (var medicion of this.mediciones) {
-            if (medicion.valor.nombre === nombreValor) {
-                medicion.evaluacion = evaluacion;
-                this.notifyall("EL doctor " + doctor.nombre + " editó " + nombreValor);
-            }
+    editarMedicion(nombreValor: string, evaluacion: string | number, doctor: Doctor) {
+        var med = this.obtenerMedicion(nombreValor);
+        if(med) {
+            med.evaluacion = evaluacion;
+            let hoy = new Date().toLocaleDateString();
+            this.notifyall("El doctor " + doctor.nombre + " editó " + nombreValor + " el día " + hoy);
         }
     }
-
 
     addObserver(observer: Observer): void {
         const isExist = this.observers.push(observer);

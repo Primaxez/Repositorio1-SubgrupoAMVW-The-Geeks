@@ -14,7 +14,7 @@ class Doctor extends Persona_1.Persona {
         return registro;
     }
     moficarRegistro(registro, nombreValor, evaluacion) {
-        registro.EditarMedicion(nombreValor, evaluacion, this);
+        registro.editarMedicion(nombreValor, evaluacion, this);
     }
     aceptarCita(cita) {
         cita.estado = EstadoCita_1.EstadoCita.CONFIRMADA;
