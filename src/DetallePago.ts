@@ -36,6 +36,14 @@ export class DetallePago{
         
     }
 
+    setDetallePago(estado: EstadoPago, fechaPago: string, metodo: MetodoPago, cantDias: number){
+        this.estado= estado;
+        this.fechaPago= fechaPago;
+        this.metodo = metodo;
+        this.cantDias = cantDias;
+
+    }
+
 
     
 }

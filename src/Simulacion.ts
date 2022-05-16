@@ -47,7 +47,12 @@ console.log("Se ha registrado el doctor " + docFelipe.nombre + " especialista en
 console.log("Vive en " + ubiCaracas.ciudad + ", " + ubiCaracas.pais);
 
 let tarRodrigo:TarjetaCredito =  new TarjetaCredito(5899415735468965, 658, "Rodrigo Mesa");
-let pagRodrigo = new DetallePago(EstadoPago.Aprobado, "13/05/22", 500, tarRodrigo, 365);
+let pagRodrigo = new DetallePago(EstadoPago.Vencido, " ", 500, tarRodrigo, 365);
+let  descuentoMitad: PagoMitad =  new PagoMitad();
+pagRodrigo.aceptarDescuento(descuentoMitad);
+pagRodrigo.setDetallePago(EstadoPago.Aprobado,"13-5-22", tarRodrigo,365);
+
+console.log(pagRodrigo);
 
 let susRodrigo = new Suscripcion(EstadoSuscripcion.ACTIVA, [pagRodrigo]);
 

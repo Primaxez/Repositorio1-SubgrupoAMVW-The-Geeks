@@ -28,26 +28,26 @@ class Paciente extends Persona_1.Persona {
             cita.estado = EstadoCita_1.EstadoCita.CANCELADA;
         }
     }
-    buscarEspecialidad(especialidad, directorio) {
-        let lista = [];
-        for (var doc of directorio.doctores) {
-            for (var esp of doc.especialidades) {
-                if (esp = especialidad) {
-                    lista.push(doc);
-                }
-            }
-        }
-        return lista;
-    }
-    buscarUbicacion(ubicacion, directorio) {
-        let lista = [];
-        for (var doc of directorio.doctores) {
-            if (doc.obtenerUbicacion().pais == ubicacion.pais && doc.obtenerUbicacion().estado == ubicacion.estado) {
-                lista.push(doc);
-            }
-        }
-        return lista;
-    }
+    /* buscarEspecialidad(especialidad: Especialidad, directorio: Directorio) {
+         let lista: Doctor[]=[];
+         for (var doc of directorio.doctores){
+             for (var esp of doc.especialidades){
+                 if (esp = especialidad){
+                     lista.push(doc);
+                 }
+             }
+         }
+         return lista
+     }
+     buscarUbicacion(ubicacion: UbicacionGeografica, directorio: Directorio) {
+         let lista: Doctor[]=[];
+         for (var doc of directorio.doctores){
+             if(doc.obtenerUbicacion().pais == ubicacion.pais && doc.obtenerUbicacion().estado == ubicacion.estado){
+                 lista.push(doc);
+             }
+         }
+         return lista;
+     }*/
     setHistoriaMedica(historia) {
         this.historia = historia;
     }

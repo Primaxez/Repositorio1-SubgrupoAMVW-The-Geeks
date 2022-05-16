@@ -18,5 +18,11 @@ class DetallePago {
     pagarSuscripcion(metodoPago) {
         metodoPago.pagar(this.monto);
     }
+    setDetallePago(estado, fechaPago, metodo, cantDias) {
+        this.estado = estado;
+        this.fechaPago = fechaPago;
+        this.metodo = metodo;
+        this.cantDias = cantDias;
+    }
 }
 exports.DetallePago = DetallePago;
